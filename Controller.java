@@ -21,6 +21,8 @@ public ModelAndView main(@RequestParam Map pMap, HttpServletRequest req, HttpSer
     mav.addObject("totalCnt", totalCnt);
     mav.addObject("resultList", resultList);
     mav.addObject("paginationInfo", paginationInfo);
+
+    return mav;
 }
 
 
