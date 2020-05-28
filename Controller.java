@@ -26,3 +26,10 @@ public ModelAndView main(@RequestParam Map pMap, HttpServletRequest req, HttpSer
 }
 
 
+@RequestMapping("")
+public ModelAndView main(@RequestParam Map pMap, HttpServletRequest req, HttpServletResponse res) throws Exception {
+    ModelAndView mav = new ModelAndView();
+    mav.setViewName();    
+    return mav;
+}
+
