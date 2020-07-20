@@ -1,27 +1,27 @@
 # scss to css
 
-program
+`program`
 
 node-sass
 
-arguments
+`arguments`
 
 $FileName$ $FileNameWithoutExtension$.css
 
-output paths to refresh
+`output paths to refresh`
 
 $FileNameWithoutExtensions$.css
 
 # scss to compressed css
 
-program
+`program`
 
 node-sass
 
-arguments
+`arguments`
 
 --output-style compressed $FileName$ $FileNameWithoutExtension$.min.css
 
-output paths to refresh
+`output paths to refresh`
 
 $FileNameWithoutExtensions$.min.css
