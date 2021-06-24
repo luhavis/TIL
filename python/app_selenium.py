@@ -14,12 +14,19 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 chrome_options = Options()
 
-
-
 chrome_options.add_argument("headless")
 chrome_options.add_argument("window-size=1920x1080")
 chrome_options.add_argument("--start-fullscreen")
 chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36")
+
+chrome_options.add_argument("disable-gpu")
+chrome_options.add_argument("start-maximized")
+chrome_options.add_experimental_option("prefs", {
+    "download.default_directory": DOWNLOAD_DIRECTORY,
+    "download.promt_for_download": False,
+    "download.directory_upgrade": True,
+    "safebrowsing.enabled": True,
+})
 
 URL = ""
 
