@@ -19,7 +19,7 @@ services:
         hard: 65536
     volumes:
       - odfe-data1:/usr/share/elasticsearch/data
-      - /home/shw/dev/TIL/elastic/config/elasticsearch.yml:/usr/share/elasticsearch/elasticsearch.yml
+      - /home/shw/dev/TIL/elastic/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - 9200:9200
       - 9600:9600 # required for Performance Analyzer
@@ -44,7 +44,7 @@ services:
         hard: 65536
     volumes:
       - odfe-data2:/usr/share/elasticsearch/data
-      - /home/shw/dev/TIL/elastic/config/elasticsearch.yml:/usr/share/elasticsearch/elasticsearch.yml
+      - /home/shw/dev/TIL/elastic/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     networks:
       - odfe-net
   kibana:
