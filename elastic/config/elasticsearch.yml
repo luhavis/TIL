@@ -13,6 +13,7 @@ network.host: 0.0.0.0
 #    - docker-test-node-1
 ######## Start OpenDistro for Elasticsearch Security Demo Configuration ########
 # WARNING: revise all the lines below before you go into production
+opendistro_security.disabled: true
 opendistro_security.ssl.transport.pemcert_filepath: esnode.pem
 opendistro_security.ssl.transport.pemkey_filepath: esnode-key.pem
 opendistro_security.ssl.transport.pemtrustedcas_filepath: root-ca.pem
