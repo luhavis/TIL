@@ -19,7 +19,10 @@ services:
         hard: 65536
     volumes:
       - odfe-data1:/usr/share/elasticsearch/data
-      - /home/shw/dev/TIL/elastic/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./config/elasticsearch-node1.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./certificate/odfe-node1.pem:/usr/share/elasticsearch/config/odfe-node1.pem
+      - ./certificate/odfe-node1.key:/usr/share/elasticsearch/config/odfe-node1.key
+      - ./certificate/MyRootCA.pem:/usr/share/elasticsearch/config/MyRootCA.pem
     ports:
       - 9200:9200
       - 9600:9600 # required for Performance Analyzer
@@ -44,7 +47,10 @@ services:
         hard: 65536
     volumes:
       - odfe-data2:/usr/share/elasticsearch/data
-      - /home/shw/dev/TIL/elastic/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./config/elasticsearch-node2.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./certificate/odfe-node2.pem:/usr/share/elasticsearch/config/odfe-node2.pem
+      - ./certificate/odfe-node2.key:/usr/share/elasticsearch/config/odfe-node2.key
+      - ./certificate/MyRootCA.pem:/usr/share/elasticsearch/config/MyRootCA.pem
     networks:
       - odfe-net
   kibana:
@@ -55,8 +61,8 @@ services:
     expose:
       - "5601"
     environment:
-      ELASTICSEARCH_URL: https://odfe-node1:9200
-      ELASTICSEARCH_HOSTS: https://odfe-node1:9200
+      ELASTICSEARCH_URL: http://odfe-node1:9200
+      ELASTICSEARCH_HOSTS: http://odfe-node1:9200
     networks:
       - odfe-net
 
